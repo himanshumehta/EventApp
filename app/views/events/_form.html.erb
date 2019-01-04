@@ -31,6 +31,13 @@
     <%= form.datetime_select :end_time , :class => 'datepicker' %>
   </div>
 
+  <div class="field" style="padding-top: 30px; padding-bottom: 30px;">
+    <label for="users">Add users</label></br>
+    <%= form.select(:TYPE, User.all.collect {|p| [ p.name, p.id ] }, 
+                                           { :prompt => "Please select"}, 
+                                           { :multiple => true}) %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
